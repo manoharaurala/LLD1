@@ -15,26 +15,7 @@ public class Main {
         PlayerService playerService = new PlayerService();
         BoardService boardService = new BoardService();
         GameService gameService = new GameService(boardService);
-
-        System.out.println("WELCOME TO TIC TAC TOE GAME");
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Please enter the dimension of the game");
-        int size = sc.nextInt();
-        sc.nextLine();  // Consumes the leftover newline character
-
-        List<Player> players = new ArrayList<>();
-        for (int i = 0; i < size - 1; i++) {
-            System.out.println("Please enter the name for player : " + (i + 1));
-            String name = sc.nextLine();  // Read the player's name
-
-            System.out.println("Please enter the character for the player : " + name);
-            char symbol = sc.nextLine().charAt(0);  // Read the player's symbol
-            players.add(playerService.createPlayer(name, symbol));
-        }
-
         GameController gameController = new GameController(playerService, gameService);
-
             System.out.println("WELCOME TO TICTACTOE GAME");
             Scanner sc = new Scanner(System.in);
             System.out.println("Please enter the dimension of the game");
